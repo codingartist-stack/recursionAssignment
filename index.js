@@ -33,6 +33,6 @@ function fibRecursion(fibNumber) {
   return fibRecursion(fibNumber - 1) + fibRecursion(fibNumber - 2);
 }
 
-console.log(fibRecursion(1));
+console.log(fibRecursion(8));
 
 //merge sort
