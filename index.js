@@ -36,3 +36,40 @@ function fibRecursion(fibNumber) {
 console.log(fibRecursion(8));
 
 //merge sort
+
+//merge sort is sorting each half and then merging the halves together
+
+//break up the list(array) into smaller chunks then order them.
+//compare the first index of each list to see which is smaller.
+
+let mergeArray1 = [2, 8, 15, 18];
+
+let mergeArray2 = [5, 9, 12, 17];
+
+let mergedArrays = [];
+
+function merge(a, b) {
+  let i = 0;
+  let j = 0;
+  let k = 0;
+  let c = [];
+
+  m = a.length;
+  n = b.length;
+
+  while (i <= m && j <= n) {
+    debugger;
+    if (a[i] < b[j]) c[k++] = a[i++];
+    //   m--;
+    else c[k++] = b[j++];
+    //   n--;
+  }
+
+  for (; i <= m; i++) c[k++] = a[i];
+
+  for (; j <= n; j++) c[k++] = b[j];
+
+  return c;
+}
+
+console.log(merge(mergeArray1, mergeArray2));
