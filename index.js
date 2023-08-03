@@ -48,26 +48,24 @@ let mergeArray2 = [5, 9, 12, 17];
 
 let mergedArrays = [];
 
-function merge(a, b) {
+//take half of the length of the array
+//split the array at the half.
+
+function merge(left, right) {
   let i = 0;
   let j = 0;
   let k = 0;
   let c = [];
 
-  m = a.length;
-  n = b.length;
-
-  while (i <= m && j <= n) {
-    debugger;
-    if (a[i] < b[j]) c[k++] = a[i++];
-    //   m--;
-    else c[k++] = b[j++];
-    //   n--;
+  while (i < left.length && j < right.length) {
+    if (left[i] < right[j]) {
+      c[k++] = left[i++];
+    } else c[k++] = right[j++];
   }
 
-  for (; i <= m; i++) c[k++] = a[i];
+  for (; i < left.length; i++) c[k++] = left[i];
 
-  for (; j <= n; j++) c[k++] = b[j];
+  for (; j < left.length; j++) c[k++] = right[j];
 
   return c;
 }
