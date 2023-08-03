@@ -23,7 +23,7 @@ function fibSeq(number) {
   return sequence;
 }
 
-console.log(fibSeq(8));
+//console.log(fibSeq(8));
 
 // fib recursion
 
@@ -33,7 +33,7 @@ function fibRecursion(fibNumber) {
   return fibRecursion(fibNumber - 1) + fibRecursion(fibNumber - 2);
 }
 
-console.log(fibRecursion(8));
+//console.log(fibRecursion(8));
 
 //merge sort
 
@@ -59,15 +59,29 @@ function merge(left, right) {
 
   while (i < left.length && j < right.length) {
     if (left[i] < right[j]) {
-      c[k++] = left[i++];
-    } else c[k++] = right[j++];
+      c[k] = left[i];
+      i++;
+    } else {
+      c[k] = right[j];
+      j++;
+    }
+    k++;
   }
 
-  for (; i < left.length; i++) c[k++] = left[i];
+  for (; i < left.length; i++) {
+    c[k] = left[i];
+    k++;
+  }
 
-  for (; j < left.length; j++) c[k++] = right[j];
+  for (; j < left.length; j++) {
+    c[k] = right[j];
+    k++;
+  }
 
   return c;
 }
 
-console.log(merge(mergeArray1, mergeArray2));
+function mergeSort() {
+  //get the half of the length
+  //split the array in half from 0 to half and half to end
+}
