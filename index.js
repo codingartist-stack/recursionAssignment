@@ -37,19 +37,9 @@ function fibRecursion(fibNumber) {
 
 //merge sort
 
-//merge sort is sorting each half and then merging the halves together
+let mergeArray1 = [2, 8, 15, 18, 5, 9, 12, 17];
 
-//break up the list(array) into smaller chunks then order them.
-//compare the first index of each list to see which is smaller.
-
-let mergeArray1 = [2, 8, 15, 18];
-
-let mergeArray2 = [5, 9, 12, 17];
-
-let mergedArrays = [];
-
-//take half of the length of the array
-//split the array at the half.
+// let mergeArray2 = [5, 9, 12, 17];
 
 function merge(left, right) {
   let i = 0;
@@ -81,7 +71,14 @@ function merge(left, right) {
   return c;
 }
 
-function mergeSort() {
+function mergeSort(array) {
   //get the half of the length
   //split the array in half from 0 to half and half to end
+  const mid = Math.floor(array.length / 2);
+  const left = array.slice(0, mid);
+  const right = array.slice(mid);
+
+  merge(left, right);
 }
+
+mergeSort(mergeArray1);
