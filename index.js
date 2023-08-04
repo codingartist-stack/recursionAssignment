@@ -1,4 +1,4 @@
-// fib for loop
+// FIB FOR LOOP
 
 function fibSeq(number) {
   let a = 0;
@@ -25,7 +25,7 @@ function fibSeq(number) {
 
 //console.log(fibSeq(8));
 
-// fib recursion
+// FIB RECURSION
 
 function fibRecursion(fibNumber) {
   if (fibNumber < 2) return fibNumber;
@@ -35,9 +35,9 @@ function fibRecursion(fibNumber) {
 
 //console.log(fibRecursion(8));
 
-//merge sort
+//MERGE SORT
 
-let mergeArray1 = [2, 8, 15, 18, 5, 9, 12, 17];
+let mergeArray1 = [2, 8, 15, 18, 5, 9, 12, 17, 22];
 
 // let mergeArray2 = [5, 9, 12, 17];
 
@@ -74,11 +74,17 @@ function merge(left, right) {
 function mergeSort(array) {
   //get the half of the length
   //split the array in half from 0 to half and half to end
+
+  if (array.length < 2) return;
+
   const mid = Math.floor(array.length / 2);
   const left = array.slice(0, mid);
   const right = array.slice(mid);
 
-  merge(left, right);
+  mergeSort(left);
+  console.log(left);
+  mergeSort(right);
+  console.log(right);
 }
 
 mergeSort(mergeArray1);
