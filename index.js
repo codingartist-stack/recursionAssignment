@@ -81,6 +81,9 @@ function mergeSort(array) {
   const left = array.slice(0, mid);
   const right = array.slice(mid);
 
+  mergeSort(left);
+  mergeSort(right);
+
   console.log(left);
   console.log(right);
 }
