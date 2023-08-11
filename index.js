@@ -37,7 +37,7 @@ function fibRecursion(fibNumber) {
 
 //******//MERGE SORT//*******/
 
-let mergeArray1 = [2, 8, 15, 18, 5, 9, 12, 17, 22];
+let mergeArray1 = [2, 18, 15, 5, 9, 12, 22, 17];
 
 // let mergeArray2 = [5, 9, 12, 17];
 
@@ -75,14 +75,18 @@ function mergeSort(array) {
   //get the half of the length
   //split the array in half from 0 to half and half to end
 
-  if (array.length < 2) return;
+  if (array.length < 2) return array;
 
   const mid = Math.floor(array.length / 2);
-  const left = array.slice(0, mid);
-  const right = array.slice(mid);
+  let left = array.slice(0, mid);
+  let right = array.slice(mid);
 
-  mergeSort(left);
-  mergeSort(right);
+  left = mergeSort(left);
+  right = mergeSort(right);
+
+  array = merge(left, right);
+
+  return array;
 }
 
-mergeSort(mergeArray1);
+console.log(mergeSort(mergeArray1));
